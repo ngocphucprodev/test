@@ -1,24 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container } from '@mui/material';
+import React from 'react';
+import Footer from './components/Footer';
 
+import Header from './components/Header';
+import Slider from './components/Slider';
+import Dashboard from './pages/admin/Dashboard';
+import Routes from './routes/Routes';
 function App() {
+  const isLoggedIn = JSON.parse(localStorage.getItem("user"));
+  let conponent
+  // console.log(isLoggedIn.role)
+  if (isLoggedIn) {
+    (isLoggedIn.role ? conponent = <Dashboard /> : conponent = <>
+      <Header />
+      {/* <Slider /> */}
+      <Container sx={{ mt: 25 }}>
+        <Routes />
+      </Container>
+      {/* <Footer /> */}
+    </>)
+  } else {
+    conponent
+      = <>
+        <Header />
+        {/* <Slider /> */}
+        <Container sx={{ mt: 25 }}>
+          <Routes />
+        </Container>
+        {/* <Footer /> */}
+      </>
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      {/* {isLoggedIn.role ? <Dashboard />
+        :
+        <>
+          <Header />
+          <Container sx={{ mt: 25 }}>
+            <Routes />
+          </Container>
+        </>
+      }
+      {/* <Header />
+
+      <Container sx={{ mt: 25 }}>
+        <Routes />
+      </Container> */}
+      {conponent}
+    </React.Fragment>
   );
 }
 
