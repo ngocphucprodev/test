@@ -691,7 +691,7 @@ const ViewCart = () => {
                     sx={{ fontWeight: "bold" }}
                     color="text"
                   >
-                    {product.price} Đd
+                    {product.price} Đ
                     {/* {console.log(product.gallery, gall[index]._id.$oid)} */}
                   </Typography>
                   {/* {console.log(galleries.data[index]._id, product.gallery)} */}

@@ -37,7 +37,7 @@ const OrderDetail = () => {
   const orderId = location.pathname.split("/");
 
   useEffect(() => {
-    fetch("http://localhost:4000/orderdetail/642d246d5198f260abcd7371")
+    fetch("http://fashion-v6.onrender.com/orderdetail/642d246d5198f260abcd7371")
       .then((response) => response.json())
       .then((data) => setOrderDetail(data))
       .catch((err) => console.log(err));

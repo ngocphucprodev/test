@@ -22,7 +22,7 @@ const AddProduct = () => {
     const strImage = form.image;
     const image = strImage.split("\\")[2];
     e.preventDefault();
-    fetch("http://localhost:4000/product/store", {
+    fetch("http://fashion-v6.onrender.com/product/store", {
       method: "POST",
       body: JSON.stringify({ ...form, image }),
       headers: { "Content-Type": "application/json" },

@@ -34,7 +34,7 @@ const Orders = () => {
   const [orders, setOrders] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:4000/order/show")
+    fetch("http://fashion-v6.onrender.com/order/show")
       .then((response) => response.json())
       .then((data) => setOrders(data));
   }, []);

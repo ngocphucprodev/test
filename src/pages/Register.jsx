@@ -39,7 +39,7 @@ const Register = () => {
     e.preventDefault();
     console.log(form);
     // const isValid = Object.values(form).every((e) => e !== "");
-    fetch("http://localhost:4000/store", {
+    fetch("http://fashion-v6.onrender.com/store", {
       method: "POST",
       body: JSON.stringify(form),
       headers: { "Content-Type": "application/json" },

@@ -21,13 +21,13 @@ const Products = () => {
   const [products, setproducts] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:4000/product/show")
+    fetch("http://fashion-v6.onrender.com/product/show")
       .then((response) => response.json())
       .then((data) => setproducts(data));
   }, []);
 
   const handleRemove = (id) => {
-    fetch(`http://localhost:4000/product/delete/${id}`, {
+    fetch(`http://fashion-v6.onrender.com/product/delete/${id}`, {
       method: "DELETE",
     }).then(() => window.location.reload());
   };

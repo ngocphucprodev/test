@@ -8,7 +8,7 @@ const Detail = () => {
   const [product, setproduct] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:4000/product/detail/${slug}`)
+    fetch(`http://fashion-v6.onrender.com/product/detail/${slug}`)
       .then((response) => response.json())
       .then((data) => setproduct(data));
   }, []);

@@ -12,13 +12,13 @@ const Users = () => {
   const [users, setUser] = useState("");
   console.log("users", users);
   useEffect(() => {
-    fetch("http://localhost:4000/all")
+    fetch("http://fashion-v6.onrender.com/all")
       .then((response) => response.json())
       .then((data) => setUser(data));
   }, []);
 
   const handleRemove = (id) => {
-    fetch(`http://localhost:4000/delete/${id}`, {
+    fetch(`http://fashion-v6.onrender.com/delete/${id}`, {
       method: "DELETE",
     }).then(() => window.location.reload());
   };

@@ -34,7 +34,9 @@ const EditProduct = () => {
     const image = strImage.split("\\")[2];
     e.preventDefault();
     fetch(
-      `http://localhost:4000/product/edit/${location.pathname.split("/")[3]}`,
+      `http://fashion-v6.onrender.com/product/edit/${
+        location.pathname.split("/")[3]
+      }`,
       {
         method: "PUT",
         body: JSON.stringify({ ...form, image }),

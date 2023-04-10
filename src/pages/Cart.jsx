@@ -49,7 +49,7 @@ const Cart = () => {
       resolve();
     })
       .then(() => {
-        return fetch("http://localhost:4000/order/store", {
+        return fetch("http://fashion-v6.onrender.com/order/store", {
           method: "POST",
           body: JSON.stringify(customer),
           headers: { "Content-Type": "application/json" },
@@ -58,7 +58,7 @@ const Cart = () => {
           .then((data) => console.log(data));
       })
       .then(() => {
-        return fetch("http://localhost:4000/order/show")
+        return fetch("http://fashion-v6.onrender.com/order/show")
           .then((response) => response.json())
           .then((data) => {
             const orders = carts.map((item) => ({
@@ -71,7 +71,7 @@ const Cart = () => {
           });
       })
       .then((orders) => {
-        fetch("http://localhost:4000/orderdetail/store", {
+        fetch("http://fashion-v6.onrender.com/orderdetail/store", {
           method: "POST",
           body: JSON.stringify(orders),
           headers: { "Content-Type": "application/json" },
